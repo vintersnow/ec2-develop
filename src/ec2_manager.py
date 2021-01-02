@@ -15,14 +15,14 @@ logger = logging.getLogger()
 
 TMP_FILE='/tmp/aws_actives'
 
-class EC2_Manager(object):
+class EC2Manager(object):
 
     """Docstring for EC2_Manager. """
 
     def __new__(cls, *args, **kargs):
         """Singleton pattern"""
         if not hasattr(cls, "_instance"):
-            cls._instance = super(EC2_Manager, cls).__new__(cls)
+            cls._instance = super(EC2Manager, cls).__new__(cls)
         return cls._instance
 
     def __init__(self, local_file_name='/tmp/aws_actives.json'):

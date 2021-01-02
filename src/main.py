@@ -1,5 +1,6 @@
 import click
-from ec2_manager import EC2_Manager
+from ec2_manager import EC2Manager
+from route53_manager import Route53Manager
 import logging
 import time
 
@@ -17,7 +18,7 @@ def cmd():
 
 @cmd.command()
 def start():
-    ec2 = EC2_Manager()
+    ec2 = EC2Manager()
 
     # find latest ami
     amis = ec2.get_images()
@@ -36,9 +37,23 @@ def start():
     instance_id = ec2.create_spot_instance(ami_id, wait=True)
     logger.info(f"Instance has created: {instance_id}")
 
+    instance_id = ec2.get_instance_id()
+    instance = ec2.ec2r.Instance(instance_id)
+    logger.info(f"Instance dns: {instance.public_dns_name}")
+    logger.info(f"Instance ip: {instance.public_ip_address}")
+
+    dns = Route53Manager('default')
+
+    # dns.set_hosted_zone_name('vintersnow.ml')
+    # host = dns.create_hosted_zone()
+    host_zone_id = 'Z095484231BSVD296Q76I'
+    host = dns.get_hosted_zone(host_zone_id)
+    record = dns.create_record_set(host, 'dev1.vintersnow.ml', instance.public_ip_address)
+    print(record)
+
 @cmd.command()
 def get_info():
-    ec2 = EC2_Manager()
+    ec2 = EC2Manager()
 
     instance_id = ec2.get_instance_id()
     print(instance_id)
@@ -52,14 +67,15 @@ def get_info():
         logger.info(f"Instance ip: {instance.public_ip_address}")
 
 @cmd.command()
-def stop():
-    ec2 = EC2_Manager()
+@click.option('--skip-save', is_flag=True)
+def stop(skip_save):
+    ec2 = EC2Manager()
 
     instance_id = ec2.get_instance_id()
     instance_status = ec2.get_instance_status(instance_id)
     logger.info(f"Instance status {instance_status}")
 
-    if instance_status in ['pending', 'running']:
+    if instance_status in ['pending', 'running'] and not skip_save:
         logger.info(f"Create AMI for {instance_id}")
         unix_time = int(time.time())
         res = ec2.create_ami(instance_id, f"{AMI_PREFIX}_{unix_time}", wait=True)
