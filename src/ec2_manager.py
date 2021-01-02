@@ -139,3 +139,44 @@ class EC2Manager(object):
         if 'active_instance_id' in self.local_data:
             return self.local_data['active_instance_id']
         return None
+
+    def attach_volume(self, instance_id, volume_id, device, wait=False):
+        try:
+            res = self.ec2.attach_volume(
+                Device=device,
+                InstanceId=instance_id,
+                VolumeId=volume_id
+            )
+
+            if res['ResponseMetadata']['HTTPStatusCode'] == 200:
+                logger.info(f"Attaching volume: {volume_id} is attached to instance: {instance_id}")
+                if wait:
+                    self.ec2.get_waiter('volume_in_use').wait(VolumeIds=[volume_id])
+                    logger.info(f"Attached volume: {volume_id} is attached to instance: {instance_id}")
+            else:
+                logger.error(f"Failed to attach volume: {volume_id} to the instance: {instance_id}\n{res['ResponseMetadata']}")
+
+        except Exception as e:
+            logger.error(f"Failed to attach volume: {volume_id} to the instance: {instance_id}")
+            logger.error(e)
+
+    def detach_volume(self, instance_id, volume_id, device, wait=False):
+        try:
+            res = self.ec2.detach_volume(
+                Device=device,
+                InstanceId=instance_id,
+                VolumeId=volume_id,
+                Force=True
+            )
+
+            if res['ResponseMetadata']['HTTPStatusCode'] == 200:
+                logger.info(f"Detaching volume: {volume_id} is Detaching from instance: {instance_id}")
+                if wait:
+                    self.ec2.get_waiter('volume_in_use').wait(VolumeIds=[volume_id], Filters=[{"Name": "status",
+                                                                                               "Value": ["available"]}])
+                    logger.info(f"Detached volume: {volume_id} is detached from instance: {instance_id}")
+            else:
+                logger.error(f"Failed to detach volume: {volume_id} from the instance: {instance_id}\n{res['ResponseMetadata']}")
+        except Exception as e:
+            logger.error(f"Failed to detach volume: {volume_id} from the instance: {instance_id}")
+            logger.error(e)

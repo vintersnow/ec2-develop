@@ -10,7 +10,7 @@
         {
             "ImageId": "ami-0db5bd25da72a3876",
             "InstanceType": "t3a.medium",
-            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "SubnetId": "subnet-eab08e9c",
             "KeyName": "ymac",
             "BlockDeviceMappings": [
                 {
@@ -37,7 +37,7 @@
         {
             "ImageId": "ami-0db5bd25da72a3876",
             "InstanceType": "t3.medium",
-            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "SubnetId": "subnet-eab08e9c",
             "KeyName": "ymac",
             "BlockDeviceMappings": [
                 {
@@ -64,7 +64,7 @@
         {
             "ImageId": "ami-0db5bd25da72a3876",
             "InstanceType": "t2.medium",
-            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "SubnetId": "subnet-eab08e9c",
             "KeyName": "ymac",
             "BlockDeviceMappings": [
                 {
@@ -91,7 +91,7 @@
         {
             "ImageId": "ami-0db5bd25da72a3876",
             "InstanceType": "m1.large",
-            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "SubnetId": "subnet-eab08e9c",
             "KeyName": "ymac",
             "BlockDeviceMappings": [
                 {
@@ -118,7 +118,7 @@
         {
             "ImageId": "ami-0db5bd25da72a3876",
             "InstanceType": "m2.xlarge",
-            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "SubnetId": "subnet-eab08e9c",
             "KeyName": "ymac",
             "BlockDeviceMappings": [
                 {
@@ -145,7 +145,7 @@
         {
             "ImageId": "ami-0db5bd25da72a3876",
             "InstanceType": "t3a.large",
-            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "SubnetId": "subnet-eab08e9c",
             "KeyName": "ymac",
             "BlockDeviceMappings": [
                 {
@@ -172,7 +172,7 @@
         {
             "ImageId": "ami-0db5bd25da72a3876",
             "InstanceType": "c4.large",
-            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "SubnetId": "subnet-eab08e9c",
             "KeyName": "ymac",
             "BlockDeviceMappings": [
                 {
@@ -199,7 +199,7 @@
         {
             "ImageId": "ami-0db5bd25da72a3876",
             "InstanceType": "m3.large",
-            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "SubnetId": "subnet-eab08e9c",
             "KeyName": "ymac",
             "BlockDeviceMappings": [
                 {
