@@ -26,6 +26,13 @@ def start():
                     reverse=True)[0]['ImageId']
     logger.info(f"Latest AMI ID: {ami_id}")
 
+    dns_host_zone_id = ''
+    domain = ''
+    user_data = f"""
+    #!/bin/sh
+    curl https://raw.githubusercontent.com/vintersnow/ec2-develop/master/init.sh | bash -s -- ap-northeast-1
+    {dns_host_zone_id} {domain}
+    """
     instance_id = ec2.create_spot_instance(ami_id, wait=True)
     logger.info(f"Instance has created: {instance_id}")
 
