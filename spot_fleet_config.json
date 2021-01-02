@@ -1,0 +1,228 @@
+{
+    "IamFleetRole": "arn:aws:iam::961169407972:role/aws-ec2-spot-fleet-tagging-role",
+    "AllocationStrategy": "capacityOptimized",
+    "TargetCapacity": 1,
+    "ValidFrom": "2021-01-01T08:26:24Z",
+    "ValidUntil": "2022-01-01T08:26:24Z",
+    "SpotPrice": "0.287",
+    "TerminateInstancesWithExpiration": true,
+    "LaunchSpecifications": [
+        {
+            "ImageId": "ami-0db5bd25da72a3876",
+            "InstanceType": "t3a.medium",
+            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "KeyName": "ymac",
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/sda1",
+                    "Ebs": {
+                        "DeleteOnTermination": true,
+                        "SnapshotId": "snap-0c6a681017c4c3e5a",
+                        "VolumeSize": 8,
+                        "VolumeType": "gp2",
+                        "Encrypted": false
+                    }
+                }
+            ],
+            "SpotPrice": "0.049",
+            "SecurityGroups": [
+                {
+                    "GroupId": "sg-0832f28b3e0bcdc05"
+                }
+            ],
+            "IamInstanceProfile": {
+                "Arn": "arn:aws:iam::961169407972:instance-profile/ec2-develop-role"
+            }
+        },
+        {
+            "ImageId": "ami-0db5bd25da72a3876",
+            "InstanceType": "t3.medium",
+            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "KeyName": "ymac",
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/sda1",
+                    "Ebs": {
+                        "DeleteOnTermination": true,
+                        "SnapshotId": "snap-0c6a681017c4c3e5a",
+                        "VolumeSize": 8,
+                        "VolumeType": "gp2",
+                        "Encrypted": false
+                    }
+                }
+            ],
+            "SpotPrice": "0.0544",
+            "SecurityGroups": [
+                {
+                    "GroupId": "sg-0832f28b3e0bcdc05"
+                }
+            ],
+            "IamInstanceProfile": {
+                "Arn": "arn:aws:iam::961169407972:instance-profile/ec2-develop-role"
+            }
+        },
+        {
+            "ImageId": "ami-0db5bd25da72a3876",
+            "InstanceType": "t2.medium",
+            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "KeyName": "ymac",
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/sda1",
+                    "Ebs": {
+                        "DeleteOnTermination": true,
+                        "SnapshotId": "snap-0c6a681017c4c3e5a",
+                        "VolumeSize": 8,
+                        "VolumeType": "gp2",
+                        "Encrypted": false
+                    }
+                }
+            ],
+            "SpotPrice": "0.0608",
+            "SecurityGroups": [
+                {
+                    "GroupId": "sg-0832f28b3e0bcdc05"
+                }
+            ],
+            "IamInstanceProfile": {
+                "Arn": "arn:aws:iam::961169407972:instance-profile/ec2-develop-role"
+            }
+        },
+        {
+            "ImageId": "ami-0db5bd25da72a3876",
+            "InstanceType": "m1.large",
+            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "KeyName": "ymac",
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/sda1",
+                    "Ebs": {
+                        "DeleteOnTermination": true,
+                        "SnapshotId": "snap-0c6a681017c4c3e5a",
+                        "VolumeSize": 8,
+                        "VolumeType": "gp2",
+                        "Encrypted": false
+                    }
+                }
+            ],
+            "SpotPrice": "0.243",
+            "SecurityGroups": [
+                {
+                    "GroupId": "sg-0832f28b3e0bcdc05"
+                }
+            ],
+            "IamInstanceProfile": {
+                "Arn": "arn:aws:iam::961169407972:instance-profile/ec2-develop-role"
+            }
+        },
+        {
+            "ImageId": "ami-0db5bd25da72a3876",
+            "InstanceType": "m2.xlarge",
+            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "KeyName": "ymac",
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/sda1",
+                    "Ebs": {
+                        "DeleteOnTermination": true,
+                        "SnapshotId": "snap-0c6a681017c4c3e5a",
+                        "VolumeSize": 8,
+                        "VolumeType": "gp2",
+                        "Encrypted": false
+                    }
+                }
+            ],
+            "SpotPrice": "0.287",
+            "SecurityGroups": [
+                {
+                    "GroupId": "sg-0832f28b3e0bcdc05"
+                }
+            ],
+            "IamInstanceProfile": {
+                "Arn": "arn:aws:iam::961169407972:instance-profile/ec2-develop-role"
+            }
+        },
+        {
+            "ImageId": "ami-0db5bd25da72a3876",
+            "InstanceType": "t3a.large",
+            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "KeyName": "ymac",
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/sda1",
+                    "Ebs": {
+                        "DeleteOnTermination": true,
+                        "SnapshotId": "snap-0c6a681017c4c3e5a",
+                        "VolumeSize": 8,
+                        "VolumeType": "gp2",
+                        "Encrypted": false
+                    }
+                }
+            ],
+            "SpotPrice": "0.0979",
+            "SecurityGroups": [
+                {
+                    "GroupId": "sg-0832f28b3e0bcdc05"
+                }
+            ],
+            "IamInstanceProfile": {
+                "Arn": "arn:aws:iam::961169407972:instance-profile/ec2-develop-role"
+            }
+        },
+        {
+            "ImageId": "ami-0db5bd25da72a3876",
+            "InstanceType": "c4.large",
+            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "KeyName": "ymac",
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/sda1",
+                    "Ebs": {
+                        "DeleteOnTermination": true,
+                        "SnapshotId": "snap-0c6a681017c4c3e5a",
+                        "VolumeSize": 8,
+                        "VolumeType": "gp2",
+                        "Encrypted": false
+                    }
+                }
+            ],
+            "SpotPrice": "0.126",
+            "SecurityGroups": [
+                {
+                    "GroupId": "sg-0832f28b3e0bcdc05"
+                }
+            ],
+            "IamInstanceProfile": {
+                "Arn": "arn:aws:iam::961169407972:instance-profile/ec2-develop-role"
+            }
+        },
+        {
+            "ImageId": "ami-0db5bd25da72a3876",
+            "InstanceType": "m3.large",
+            "SubnetId": "subnet-eab08e9c, subnet-b14b35e9, subnet-f6f58cde",
+            "KeyName": "ymac",
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/sda1",
+                    "Ebs": {
+                        "DeleteOnTermination": true,
+                        "SnapshotId": "snap-0c6a681017c4c3e5a",
+                        "VolumeSize": 8,
+                        "VolumeType": "gp2",
+                        "Encrypted": false
+                    }
+                }
+            ],
+            "SpotPrice": "0.193",
+            "SecurityGroups": [
+                {
+                    "GroupId": "sg-0832f28b3e0bcdc05"
+                }
+            ],
+            "IamInstanceProfile": {
+                "Arn": "arn:aws:iam::961169407972:instance-profile/ec2-develop-role"
+            }
+        }
+    ],
+    "Type": "request"
+}
